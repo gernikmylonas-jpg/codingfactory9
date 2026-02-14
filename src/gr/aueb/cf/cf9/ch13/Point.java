@@ -4,13 +4,13 @@ import java.util.Random;
 
 public class Point {
     private int x;
-    private  int y;
+    private int y;
 
-    public Point() {
+    private Point() {
 
     }
 
-    public Point(int x, int y) {
+    private Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -24,8 +24,11 @@ public class Point {
     }
 
     public static Point getRandomPoint() {
-        final int BOUND = 101;
-        Random random  = new Random(System.nanoTime());
-        return new Point(random.nextInt(BOUND - 1 + 1) + 1,random.nextInt(BOUND -1 + 1) + 1);
+        final int BOUND = 100;
+        Random random = new Random(System.nanoTime());
+
+        // (max - min + 1) + 1
+        return new Point(random.nextInt(BOUND - 1 + 1) + 1, random.nextInt(BOUND - 1 + 1) + 1);
+
     }
 }
